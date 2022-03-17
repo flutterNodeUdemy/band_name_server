@@ -7,7 +7,10 @@ const port = process.env.PORT
 const app = express();
 const server = require('http').createServer(app);
 module.exports.io = require('socket.io')(server, {
-    allowEIO3: true // false by default
+    allowEIO3: true, // false by default
+    cors: {
+        origin: '*',
+    }
 });
 require('./sockets/socket');
 
