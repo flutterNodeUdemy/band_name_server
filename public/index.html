@@ -13,6 +13,8 @@
       var socket = io();
       socket.on("connect", () => {
         console.log("Conecato al servidor...");
+        const version = socket; // either 3 or 4
+        console.log(version);
       });
 
       socket.on("disconnect", () => {

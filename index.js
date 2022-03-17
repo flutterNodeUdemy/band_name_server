@@ -6,7 +6,7 @@ require('dotenv').config();
 const port = process.env.PORT
 const app = express();
 const server = require('http').createServer(app);
-module.exports.io = require('socket.io')(server);
+module.exports.io = require('socket.io', { allowEIO3: true })(server);
 require('./sockets/socket');
 
 
